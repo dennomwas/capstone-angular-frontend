@@ -1,0 +1,16 @@
+<!-- <div class="col-md-12" Ngif="errorMsg">
+    <div class="alert alert-danger" role="alert">
+      {{errorMsg}}
+    </div>
+  </div> -->
+<div class="card" *ngIf="coordinates">
+  <div class="card-body">
+    <h5 class="card-title">{{title}}</h5>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><span class="data-title">Coordinates: </span>{{coordinates.latitude}},
+        {{coordinates.longitude}}</li>
+      <li class="list-group-item"><span class="data-title">Time zone: </span>{{coordinates.timezone}}</li>
+      <li class="list-group-item"><span class="data-title">Temperature: </span>{{coordinates.currently.temperature}}</li>
+    </ul>
+  </div>
+</div>

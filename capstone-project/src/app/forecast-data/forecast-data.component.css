@@ -1,0 +1,18 @@
+.map-container {
+  border: 1px solid #c0c6c5;
+}
+
+.data-container {
+  border: 1px solid #c0c6c5;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px;
+}
+
+.data-title {
+  font-weight: 500;
+}
