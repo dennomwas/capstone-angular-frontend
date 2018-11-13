@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'capstone-project';
+  title = 'Weather Forecast App';
+  coordinates = {
+    latitude: -1.221223,
+    longitude: 36.885043
+  };
+
 }
