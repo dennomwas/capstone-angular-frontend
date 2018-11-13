@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { CoordinatesformComponent } from './coordinatesform/coordinatesform.component';
 import { ForecastDataComponent } from './forecast-data/forecast-data.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     CoordinatesformComponent,
-    ForecastDataComponent
+    ForecastDataComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
