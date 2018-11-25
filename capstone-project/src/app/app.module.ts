@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 import { AgmCoreModule } from '@agm/core';
 
 // local imports
@@ -8,6 +10,11 @@ import { MapComponent } from './map/map.component';
 import { CoordinatesformComponent } from './coordinatesform/coordinatesform.component';
 import { ForecastDataComponent } from './forecast-data/forecast-data.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './auth/login/login.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RegisterComponent } from './auth/register/register.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -15,13 +22,22 @@ import { NavbarComponent } from './navbar/navbar.component';
     MapComponent,
     CoordinatesformComponent,
     ForecastDataComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent,
+    RegisterComponent,
+    DashboardComponent,
+    SignupComponent,
+
   ],
   imports: [
     BrowserModule,
-    AgmCoreModule.forRoot({ apiKey: 'AIzaSyA76mUQk71y3A7jOBxr1YBgNsfgbjVyWEM' })
+    FormsModule,
+    HttpModule,
+    AgmCoreModule.forRoot({ apiKey: 'AIzaSyA76mUQk71y3A7jOBxr1YBgNsfgbjVyWEM' }),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

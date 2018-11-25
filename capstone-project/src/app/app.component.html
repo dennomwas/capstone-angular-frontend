@@ -1,20 +1,8 @@
 <app-navbar></app-navbar>
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">{{ coordinates.latitude}}, {{coordinates.longitude }}</h1>
+    <h1 class="display-4">Weather Forecast API</h1>
     <p class="lead">We provide you with real time weather patterns of any Location around the world.</p>
   </div>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <app-coordinatesform (coordinatesFormEvent)="coordinates=$event"></app-coordinatesform>
-    </div>
-    <div class="col-md-7">
-      <app-map [coordinates]="coordinates"></app-map>
-    </div>
-    <div class="col-md-5">
-      <app-forecast-data [coordinates]="coordinates"></app-forecast-data>
-    </div>
-  </div>
-</div>
+<router-outlet></router-outlet>

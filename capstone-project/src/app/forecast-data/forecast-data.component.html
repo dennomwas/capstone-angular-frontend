@@ -9,8 +9,21 @@
     <ul class="list-group list-group-flush">
       <li class="list-group-item"><span class="data-title">Coordinates: </span>{{coordinates.latitude}},
         {{coordinates.longitude}}</li>
-      <li class="list-group-item"><span class="data-title">Time zone: </span>{{coordinates.timezone}}</li>
-      <li class="list-group-item"><span class="data-title">Temperature: </span>{{coordinates.currently.temperature}}</li>
+      <li class="list-group-item"><span class="data-title">Time zone: </span>{{coordinates.timezone || 'GMT +3'}}</li>
+      <li class="list-group-item"><span class="data-title">Temperature: </span>{{coordinates.currently?.temperature ||
+        'Unavailable'}}</li>
+      <li class="list-group-item"><span class="data-title">precipType: </span>{{coordinates.currently?.precipType ||
+        'Unavailable'}}</li>
+      <li class="list-group-item"><span class="data-title">Humidity: </span>{{coordinates.currently.humidity }}</li>
+      <li class="list-group-item"><span class="data-title">Pressure: </span>{{coordinates.currently.pressure }}</li>
+      <li class="list-group-item"><span class="data-title">Wind Speed: </span>{{coordinates.currently?.windSpeed ||
+        'Unavailable'}}</li>
+      <li class="list-group-item"><span class="data-title">Wind Bearing: </span>{{coordinates.currently?.windBearing ||
+        'Unavailable'}}</li>
+      <li class="list-group-item"><span class="data-title">Summary: </span>{{coordinates.currently?.summary ||
+        'Unavailable'}}</li>
+      <li class="list-group-item"><span class="data-title">Icon: </span>{{coordinates.currently?.icon ||
+        'Unavailable'}}</li>
     </ul>
   </div>
 </div>
