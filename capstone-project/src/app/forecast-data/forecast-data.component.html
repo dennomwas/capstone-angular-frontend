@@ -14,8 +14,10 @@
         'Unavailable'}}</li>
       <li class="list-group-item"><span class="data-title">precipType: </span>{{coordinates.currently?.precipType ||
         'Unavailable'}}</li>
-      <li class="list-group-item"><span class="data-title">Humidity: </span>{{coordinates.currently.humidity }}</li>
-      <li class="list-group-item"><span class="data-title">Pressure: </span>{{coordinates.currently.pressure }}</li>
+      <li class="list-group-item"><span class="data-title">Humidity: </span>{{coordinates.currently?.humidity ||
+        "Unavailable" }}</li>
+      <li class="list-group-item"><span class="data-title">Pressure: </span>{{coordinates.currently?.pressure ||
+        "Unavailable"}}</li>
       <li class="list-group-item"><span class="data-title">Wind Speed: </span>{{coordinates.currently?.windSpeed ||
         'Unavailable'}}</li>
       <li class="list-group-item"><span class="data-title">Wind Bearing: </span>{{coordinates.currently?.windBearing ||

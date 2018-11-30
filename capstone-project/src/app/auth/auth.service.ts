@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
+import { HttpErrorResponse } from '@angular/common/http';
 import { map, catchError, retry } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable, from } from 'rxjs';
 
 // local imports
 import { contentHeaders } from '../utils/headers';

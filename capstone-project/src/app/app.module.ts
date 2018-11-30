@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SignupComponent } from './auth/signup/signup.component';
     RegisterComponent,
     DashboardComponent,
     SignupComponent,
+    FooterComponent,
 
   ],
   imports: [

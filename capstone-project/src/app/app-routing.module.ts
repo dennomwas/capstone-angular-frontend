@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './utils/auth.guard';
 
 // local imports
 import { MapComponent } from './map/map.component';
@@ -12,7 +13,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { SignupComponent } from './auth/signup/signup.component';
 
 const appRoutes: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   {
     path: 'registration', component: RegisterComponent, children: [
       { path: 'login', component: LoginComponent },
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
     ]
   },
   { path: 'weathermap', component: MapComponent },
+  { path: 'weatherdetails', component: ForecastDataComponent },
   { path: '', redirectTo: '/registration/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/registration/login', pathMatch: 'full' }
 ];

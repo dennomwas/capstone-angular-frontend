@@ -1,6 +1,6 @@
 <div class="container login-container">
   <div class="row">
-    <div class="offset-md-3 col-md-6 login" *ngIf="loginPage">
+    <div class="offset-md-3 col-md-6 login">
       <h3>Login</h3>
       <form>
         <div class="form-group">
@@ -9,34 +9,11 @@
         <div class="form-group">
           <input type="password" class="form-control" placeholder="Your Password *" name="password" [(ngModel)]="password" />
         </div>
-        <div class="form-group">
+        <div class="form-inline">
           <input type="submit" class="btnSubmit" (click)="login()" value="Login" />
+          <input type="submit" class="btnSubmit" [routerLink]="['/registration/signup']" value="Register" />
         </div>
       </form>
     </div>
   </div>
-
-  <div class="row">
-    <div class="offset-md-3 col-md-6 register" *ngIf="signupPage">
-      <h3>Register</h3>
-      <form>
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="First Name *" name="firstname" />
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Last Name *" name="lastname" />
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Email *" name="email" />
-        </div>
-        <div class="form-group">
-          <input type="password" class="form-control" placeholder="Password *" name="password" />
-        </div>
-        <div class="form-group">
-          <input type="submit" class="btnSubmit" value="Register" />
-        </div>
-      </form>
-    </div>
-  </div>
-
 </div>

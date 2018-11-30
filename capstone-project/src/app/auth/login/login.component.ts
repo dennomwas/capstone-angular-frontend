@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 // local imports
@@ -10,7 +10,6 @@ import { AuthService } from '../auth.service';
   styleUrls: ['login.component.css']
 })
 export class LoginComponent implements OnInit {
-  title = 'Login';
   loginPage = true;
   email: string;
   password: string;
@@ -25,13 +24,20 @@ export class LoginComponent implements OnInit {
         response => {
           if (response.token) {
             localStorage.setItem('token', response.token);
-            // this.router.navigate['home']
+            this.router.navigate(['dashboard']);
+          } else {
+            this.router.navigate(['registration']);
           }
         },
         error => {
           console.error(error);
         }
       );
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    // this.router.navigate(['/registration/login']);
   }
 
 }
