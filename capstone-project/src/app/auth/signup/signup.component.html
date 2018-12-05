@@ -1,22 +1,26 @@
 <div class="container login-container">
   <div class="row">
-    <div class="offset-md-3 col-md-6 register" *ngIf="signupPage">
+    <div class="offset-md-3 col-md-6 register">
       <h3>Sign Up</h3>
-      <form>
+      <form (ngSubmit)="signup()" #signupForm="ngForm">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="First Name *" name="firstname" [(ngModel)]="firstName" />
+          <input type="text" class="form-control" placeholder="First Name *" id="firstName" required [(ngModel)]="firstName"
+            name="firstname" #name=ngModel />
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Last Name *" name="lastname" [(ngModel)]="lastName" />
+          <input type="text" class="form-control" placeholder="Last Name *" id="lastName" required [(ngModel)]="lastName"
+            name="lastName" #name=ngModel />
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Email *" name="email" [(ngModel)]="email" />
+          <input type="text" class="form-control" placeholder="Email *" id="email" required [(ngModel)]="email"
+            name="email" #name=ngModel />
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" placeholder="Password *" name="password" [(ngModel)]="password" />
+          <input type="password" class="form-control" placeholder="Password *" id="password" required [(ngModel)]="password"
+            name="password" #name=ngModel />
         </div>
         <div class="form-group">
-          <input type="submit" class="btnSubmit" value="Sign Up" (click)="signup()" />
+          <input type="submit" class="btnSubmit" [disabled]="!signupForm.form.valid" value="Register" />
         </div>
       </form>
     </div>

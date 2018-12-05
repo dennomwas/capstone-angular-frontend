@@ -3,16 +3,15 @@ import { Router } from '@angular/router';
 
 // local imports
 import { AuthService } from '../auth.service';
-
 @Component({
   selector: 'app-login',
   templateUrl: 'login.component.html',
   styleUrls: ['login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginPage = true;
   email: string;
   password: string;
+  errorMessage: string;
 
   constructor(private authservice: AuthService, private router: Router) { }
 
@@ -30,14 +29,14 @@ export class LoginComponent implements OnInit {
           }
         },
         error => {
-          console.error(error);
+          this.errorMessage = <any>error;
         }
       );
   }
 
   logout() {
     localStorage.removeItem('token');
-    // this.router.navigate(['/registration/login']);
+    this.router.navigate(['/registration/login']);
   }
 
 }

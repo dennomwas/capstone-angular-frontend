@@ -3,10 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './utils/auth.guard';
 
 // local imports
-import { MapComponent } from './map/map.component';
-import { CoordinatesformComponent } from './coordinatesform/coordinatesform.component';
-import { ForecastDataComponent } from './forecast-data/forecast-data.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './auth/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './auth/register/register.component';
@@ -21,8 +17,6 @@ const appRoutes: Routes = [
       { path: '', redirectTo: '/registration/login', pathMatch: 'full' },
     ]
   },
-  { path: 'weathermap', component: MapComponent },
-  { path: 'weatherdetails', component: ForecastDataComponent },
   { path: '', redirectTo: '/registration/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/registration/login', pathMatch: 'full' }
 ];

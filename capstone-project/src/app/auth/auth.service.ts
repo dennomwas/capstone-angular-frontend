@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 import { HttpErrorResponse } from '@angular/common/http';
 import { map, catchError, retry } from 'rxjs/operators';
 import { Observable, from } from 'rxjs';
+import { Router } from '@angular/router';
 
 // local imports
 import { contentHeaders } from '../utils/headers';
@@ -12,9 +13,10 @@ import { Ilogin, Iregister } from '../utils/auth-interface';
   providedIn: 'root'
 })
 export class AuthService {
-  private authUrl = 'https://private-300bdf-capstoneproject.apiary-mock.com';
+  message: string;
+  private authUrl = 'https://cors-anywhere.herokuapp.com/https://peaceful-beach-77632.herokuapp.com/';
 
-  constructor(private http: Http) { }
+  constructor(private http: Http, private router: Router) { }
 
   login(email, password): Observable<Ilogin> {
     const loginData = JSON.stringify({ email, password });

@@ -10,11 +10,11 @@ import { AuthService } from '../auth.service';
   styleUrls: ['../login/login.component.css']
 })
 export class SignupComponent implements OnInit {
-  signupPage = true;
   firstName: string;
   lastName: string;
   email: string;
   password: string;
+  errorMessage: string;
 
   constructor(private authservice: AuthService, private router: Router) { }
 
@@ -25,6 +25,7 @@ export class SignupComponent implements OnInit {
     this.authservice.register(this.firstName, this.lastName, this.email, this.password)
       .subscribe(
         response => {
+          console.log('hapa tu', response);
           if (response.token) {
             localStorage.setItem('token', response.token);
             this.router.navigate(['dashboard']);
@@ -33,7 +34,7 @@ export class SignupComponent implements OnInit {
           }
         },
         error => {
-          console.error(error);
+          this.errorMessage = <any>error;
         }
       );
   }
