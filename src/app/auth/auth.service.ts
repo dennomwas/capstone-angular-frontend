@@ -31,7 +31,7 @@ export class AuthService {
   }
 
 
-  register(firstName, lastName, email, password): Observable<Iregister> {
+  register(firstName, lastName, email, password ): Observable<Iregister> {
     const registerData = JSON.stringify({ firstName, lastName, email, password });
     const registerUrl = this.authUrl + '/register';
 

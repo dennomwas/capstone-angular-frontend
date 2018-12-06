@@ -1,0 +1,5 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink='/dashboard' routerLinkActive="active">DashBoard</a>
+  <a class="navbar-brand" href="#" (click)="logout()" routerLinkActive="active">Log Out</a>
+  <a class="navbar-brand" *ngIf="!currentUser" routerLink='/registration/login' routerLinkActive="active">Login</a>
+</nav>

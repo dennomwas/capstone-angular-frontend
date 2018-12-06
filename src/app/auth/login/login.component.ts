@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 // local imports
 import { AuthService } from '../auth.service';
@@ -18,25 +19,20 @@ export class LoginComponent implements OnInit {
   ngOnInit() { }
 
   login() {
-    this.authservice.login(this.email, this.password)
+    return this.authservice.login(this.email, this.password)
       .subscribe(
         response => {
           if (response.token) {
             localStorage.setItem('token', response.token);
             this.router.navigate(['dashboard']);
           } else {
-            this.router.navigate(['registration']);
+            this.router.navigate(['registration/login']);
           }
         },
         error => {
           this.errorMessage = <any>error;
         }
       );
-  }
-
-  logout() {
-    localStorage.removeItem('token');
-    this.router.navigate(['/registration/login']);
   }
 
 }

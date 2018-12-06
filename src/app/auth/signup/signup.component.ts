@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 
 // local imports
 import { AuthService } from '../auth.service';
-
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -25,7 +24,6 @@ export class SignupComponent implements OnInit {
     this.authservice.register(this.firstName, this.lastName, this.email, this.password)
       .subscribe(
         response => {
-          console.log('hapa tu', response);
           if (response.token) {
             localStorage.setItem('token', response.token);
             this.router.navigate(['dashboard']);
